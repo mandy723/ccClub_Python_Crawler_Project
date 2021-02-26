@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>表單傳送範例</title>
+
+</head>
+<body>
+    <form action="/hello/" method="POST" name="form1">
+        {% csrf_token %}  <!-- 啟動CSRF防護，保護伺服器避免被攻擊 -->
+        輸入權重排序( 1最重要~8最不重要 )<br>
+        <label for="PEPS">EPS:</label>
+        <select name="PEPS" id="PEPS">
+            <option value="1" selected >1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+        <label for="Pyield">殖利率:</label>
+        <select name="Pyield" id="Pyield">
+            <option value="1" selected >1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+
+        </select>
+        <label for="Pcash">現金股利:</label>
+        <select name="Pcash" id="Pcash">
+            <option value="1" selected >1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+
+        </select>
+        <label for="Pstock">股權股利:</label>
+        <select name="Pstock" id="Pstock">
+            <option value="1" selected >1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+
+        </select>
+        <label for="Pbata">Beta值:</label>
+        <select name="Pbata" id="Pbata">
+            <option value="1" selected >1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+
+        </select>
+        <label for="Pday">填權息天數:</label>
+        <select name="Pday" id="Pday">
+            <option value="1" selected >1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+
+        </select>
+        <label for="Ppercent">填權息成功率:</label>
+        <select name="Ppercent" id="Ppercent">
+            <option value="1" selected >1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+
+        </select>
+        <label for="Pover">三大法人買賣超:</label>
+        <select name="Pover" id="Pover">
+            <option value="1" selected >1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+        <div><input type="submit" value="送出資料"></div>
+        <div>{{mess}}</div>
+        <div>目前權重值為: &nbsp EPS={{PEPS}} &nbsp 殖利率={{Pyield}} &nbsp 現金股利={{Pcash}} &nbsp 股權股利={{Pstock}} &nbsp Beta值={{Pbata}} &nbsp 填權息天數={{Pday}} &nbsp 填權息成功率={{Ppercent}} &nbsp 三大法人買賣超={{Pover}}</div>
+
+        <p>
+
+        <table style="border:3px #cccccc solid;" cellpadding="10" border='1'>
+            <caption>前一百名推薦股</caption>
+            <thead>
+            <tr>
+                <th>名次</th>
+                <th>股票代號</th>
+                <th>名稱</th>
+                <th>EPS</th>
+                <th>DividendYield</th>
+                <th>CashDividend</th>
+                <th>StockDividend</th>
+                <th>Beta值</th>
+                <th>三大法人買賣超</th>
+                <th>十年填權息平均天數</th>
+                <th>十年填權息成功率</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in lst %}
+                <tr>
+                    <td>{{row.名次}}</td>
+                    <td>{{row.代號}}</td>
+                    <td>{{row.名稱}}</td>
+                    <td>{{row.EPS}}</td>
+                    <td>{{row.DividendYield}}</td>
+                    <td>{{row.CashDividend}}</td>
+                    <td>{{row.StockDividend}}</td>
+                    <td>{{row.beta值}}</td>
+                    <td>{{row.三大法人買賣超}}</td>
+                    <td>{{row.十年填權息平均天數}}</td>
+                    <td>{{row.十年填權息成功率}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </form>
+</body>
+</html>
+
+
+    <!-- 嘗試讓選單值保留失敗的遺體
+    <script type="text/javascript">
+			$(function(){
+				// 接收后台传入的值
+				var city_id= {{input_cityid}}
+				// alert(city_id)
+				// 设置select的值
+				$("#PEPS").val(city_id)
+		})
+	</script>
+	-->
