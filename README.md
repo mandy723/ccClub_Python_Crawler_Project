@@ -1,10 +1,10 @@
-# 無尾熊存股法-挑選適合長抱的尤加利樹
+# 無尾熊存股法-挑選適合長抱的尤加利樹  (Ref.[PPT](https://drive.google.com/file/d/1NW5nBBQinVo4j0_WFGjpFUUFkPRvsOo8/view?usp=sharing))
 ## 功能：
 使用者可在此網站上自行決定股票各項指標之權重，找出合適的前100名推薦存股
 
 ## 實作方式主要為兩大部分：
 ### [資料處理]
-- 利用 Python+Selenium 至 https://goodinfo.tw/StockInfo/index.asp 爬取最近10年的各項股票指標資料
+- 利用 Python+Selenium 至[台灣股市資訊網](https://goodinfo.tw/StockInfo/index.asp)爬取最近10年的各項股票指標資料
 - 使用 Panda 套件整理上述資料，並使用一套分析方法計算出所有股票在各項指標的分數，並匯出成 CSV 檔供 Django 使用
 ### [HTML顯示]
 以下步驟皆在 Django 內完成：
