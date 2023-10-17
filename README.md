@@ -5,7 +5,7 @@ The project was about creating a web page which automatically crawls and analysi
 
 （使用者可在此網站上自行決定股票各項指標之權重，找出合適的前100名推薦存股）
 
-## 實作方式主要為兩大部分：
+## 實作方式：
 ### [資料處理]
 - 利用 Python+Selenium 至[台灣股市資訊網](https://goodinfo.tw/StockInfo/index.asp)爬取最近10年的各項股票指標資料
 - 使用 Panda 套件整理上述資料，再使用一套分析方法計算出所有股票在各項指標的分數，並匯出成 CSV 檔供 Django 使用
