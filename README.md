@@ -1,6 +1,9 @@
 # 無尾熊存股法-挑選適合長抱的尤加利樹  (Ref.[PPT](https://drive.google.com/file/d/1NW5nBBQinVo4j0_WFGjpFUUFkPRvsOo8/view?usp=sharing))
-## 功能：
-使用者可在此網站上自行決定股票各項指標之權重，找出合適的前100名推薦存股
+> Join the [ccClub Python Study Group](https://www.ccclub.io) and completed this project with other members
+
+The project was about creating a web page which automatically crawls and analysis database from the other stock market web and provides stock ranking according to the user-determined weights of each index.
+
+（使用者可在此網站上自行決定股票各項指標之權重，找出合適的前100名推薦存股）
 
 ## 實作方式主要為兩大部分：
 ### [資料處理]
